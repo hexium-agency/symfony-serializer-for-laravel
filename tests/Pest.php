@@ -1,5 +1,5 @@
 <?php
 
-use HexiumAgency\LaravelSfSerializer\Tests\TestCase;
+use HexiumAgency\SymfonySerializerForLaravel\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

@@ -1,11 +1,11 @@
 <?php
 
-namespace HexiumAgency\LaravelSfSerializer\ServiceProviders;
+namespace HexiumAgency\SymfonySerializerForLaravel\ServiceProviders;
 
 use Illuminate\Support\ServiceProvider;
 use Symfony\Component\PropertyAccess\PropertyAccessor;
 
-class LaravelSfPropertyAccessServiceProvider extends ServiceProvider
+class PropertyAccessServiceProvider extends ServiceProvider
 {
     public function register(): void
     {

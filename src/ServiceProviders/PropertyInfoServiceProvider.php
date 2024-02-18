@@ -1,6 +1,6 @@
 <?php
 
-namespace HexiumAgency\LaravelSfSerializer\ServiceProviders;
+namespace HexiumAgency\SymfonySerializerForLaravel\ServiceProviders;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
@@ -16,16 +16,16 @@ use Symfony\Component\PropertyInfo\PropertyReadInfoExtractorInterface;
 use Symfony\Component\PropertyInfo\PropertyTypeExtractorInterface;
 use Symfony\Component\PropertyInfo\PropertyWriteInfoExtractorInterface;
 
-class LaravelSfPropertyInfoServiceProvider extends ServiceProvider
+class PropertyInfoServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
         $this->app->bind('property_info', static function (Application $application) {
-            $listExtractors = iterator_to_array($application->tagged('property_info.list_extractor')->getIterator());
-            $descriptionExtractors = iterator_to_array($application->tagged('property_info.description_extractor')->getIterator());
-            $typeExtractors = iterator_to_array($application->tagged('property_info.type_extractor')->getIterator());
-            $accessExtractors = iterator_to_array($application->tagged('property_info.access_extractor')->getIterator());
-            $initializableExtractors = iterator_to_array($application->tagged('property_info.initializable_extractor')->getIterator());
+            $listExtractors = iterator_to_array($application->tagged('property_info.list_extractor'));
+            $descriptionExtractors = iterator_to_array($application->tagged('property_info.description_extractor'));
+            $typeExtractors = iterator_to_array($application->tagged('property_info.type_extractor'));
+            $accessExtractors = iterator_to_array($application->tagged('property_info.access_extractor'));
+            $initializableExtractors = iterator_to_array($application->tagged('property_info.initializable_extractor'));
 
             return new PropertyInfoExtractor($listExtractors, $typeExtractors, $descriptionExtractors, $accessExtractors, $initializableExtractors);
         });

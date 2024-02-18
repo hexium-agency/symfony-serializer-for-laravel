@@ -1,10 +1,10 @@
 <?php
 
-namespace HexiumAgency\LaravelSfSerializer;
+namespace HexiumAgency\SymfonySerializerForLaravel;
 
-use HexiumAgency\LaravelSfSerializer\Configuration\ConfigurationLoader;
-use HexiumAgency\LaravelSfSerializer\ServiceProviders\LaravelSfPropertyAccessServiceProvider;
-use HexiumAgency\LaravelSfSerializer\ServiceProviders\LaravelSfPropertyInfoServiceProvider;
+use HexiumAgency\SymfonySerializerForLaravel\Configuration\ConfigurationLoader;
+use HexiumAgency\SymfonySerializerForLaravel\ServiceProviders\PropertyAccessServiceProvider;
+use HexiumAgency\SymfonySerializerForLaravel\ServiceProviders\PropertyInfoServiceProvider;
 use Illuminate\Foundation\Application;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -37,7 +37,7 @@ use Symfony\Component\Serializer\Normalizer\UnwrappingDenormalizer;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\SerializerInterface;
 
-class LaravelSfSerializerServiceProvider extends PackageServiceProvider
+class SymfonySerializerForLaravelServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -47,18 +47,18 @@ class LaravelSfSerializerServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('laravel-sf-serializer')
-            ->hasConfigFile()
+            ->name('symfony-serializer-for-laravel')
+            ->hasConfigFile('symfony-serializer')
             ->hasCommand(DebugCommand::class);
     }
 
     public function registeringPackage(): void
     {
-        $this->app->register(LaravelSfPropertyAccessServiceProvider::class);
-        $this->app->register(LaravelSfPropertyInfoServiceProvider::class);
+        $this->app->register(PropertyAccessServiceProvider::class);
+        $this->app->register(PropertyInfoServiceProvider::class);
 
         $this->app->bind('serializer', static function (Application $application) {
-            $configuration = ConfigurationLoader::load(config('sf-serializer'));
+            $configuration = ConfigurationLoader::load(config('symfony-serializer')->ge);
 
             return new Serializer(
                 $configuration->getSortedNormalizers($application),
@@ -90,14 +90,14 @@ class LaravelSfSerializerServiceProvider extends PackageServiceProvider
         $this->app->tag('serializer.denormalizer.unwrapping', ['serializer.normalizer']);
 
         $this->app->bind('serializer.normalizer.uid', static function () {
-            $configuration = ConfigurationLoader::load(config('sf-serializer'));
+            $configuration = ConfigurationLoader::load(config('symfony-serializer'));
 
             return new UidNormalizer(defaultContext: $configuration->defaultContext); // @phpstan-ignore-line
         });
         $this->app->tag('serializer.normalizer.uid', ['serializer.normalizer']);
 
         $this->app->bind('serializer.normalizer.datetime', static function () {
-            $configuration = ConfigurationLoader::load(config('sf-serializer'));
+            $configuration = ConfigurationLoader::load(config('symfony-serializer'));
 
             return new DateTimeNormalizer(defaultContext: $configuration->defaultContext); // @phpstan-ignore-line
         });
@@ -109,7 +109,7 @@ class LaravelSfSerializerServiceProvider extends PackageServiceProvider
         $this->app->tag('serializer.normalizer.datetimezone', ['serializer.normalizer']);
 
         $this->app->bind('serializer.normalizer.dateinterval', static function () {
-            $configuration = ConfigurationLoader::load(config('sf-serializer'));
+            $configuration = ConfigurationLoader::load(config('symfony-serializer'));
 
             return new DateIntervalNormalizer(defaultContext: $configuration->defaultContext); // @phpstan-ignore-line
         });
@@ -131,7 +131,7 @@ class LaravelSfSerializerServiceProvider extends PackageServiceProvider
         $this->app->tag('serializer.denormalizer.array', ['serializer.normalizer']);
 
         $this->app->bind('serializer.normalizer.object', static function (Application $application) {
-            $configuration = ConfigurationLoader::load(config('sf-serializer'));
+            $configuration = ConfigurationLoader::load(config('symfony-serializer'));
 
             return new ObjectNormalizer(
                 classMetadataFactory: $application->make('serializer.mapping.class_metadata_factory'),
@@ -150,7 +150,7 @@ class LaravelSfSerializerServiceProvider extends PackageServiceProvider
         $this->app->tag('serializer.normalizer.object', ['serializer.normalizer']);
 
         $this->app->bind('serializer.normalizer.property', static function (Application $application) {
-            $configuration = ConfigurationLoader::load(config('sf-serializer'));
+            $configuration = ConfigurationLoader::load(config('symfony-serializer'));
 
             return new PropertyNormalizer(
                 classMetadataFactory: $application->make('serializer.mapping.class_metadata_factory'),

@@ -1,6 +1,6 @@
 <?php
 
-namespace HexiumAgency\LaravelSfSerializer\Configuration;
+namespace HexiumAgency\SymfonySerializerForLaravel\Configuration;
 
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Contracts\Foundation\Application;
@@ -13,12 +13,12 @@ class Configuration
     /**
      * @var array<Normalizer>
      */
-    private array $normalizers = [];
+    public array $normalizers = [];
 
     /**
      * @var array<Encoder>
      */
-    private array $encoders = [];
+    public array $encoders = [];
 
     public array $defaultContext = [];
 

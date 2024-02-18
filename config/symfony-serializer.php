@@ -1,6 +1,12 @@
 <?php
 
-// config for HexiumAgency/LaravelSfSerializer
+/**
+ * @var array{
+ *     normalizers: array<array{id: string, priority: int}>,
+ *     encoders: array<array{id: string}>,
+ *     defaultContext: array<string, mixed>
+ * }
+ */
 return [
     'normalizers' => [
         [

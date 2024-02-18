@@ -1,6 +1,6 @@
 <?php
 
-namespace HexiumAgency\LaravelSfSerializer\Configuration;
+namespace HexiumAgency\SymfonySerializerForLaravel\Configuration;
 
 final class Normalizer
 {

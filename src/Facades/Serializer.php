@@ -1,11 +1,11 @@
 <?php
 
-namespace HexiumAgency\LaravelSfSerializer\Facades;
+namespace HexiumAgency\SymfonySerializerForLaravel\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \HexiumAgency\LaravelSfSerializer\LaravelSfSerializer
+ * @see \HexiumAgency\SymfonySerializerForLaravel\SymfonySerializerForLaravel
  */
 class Serializer extends Facade
 {

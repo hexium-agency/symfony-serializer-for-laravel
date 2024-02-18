@@ -14,7 +14,7 @@ code, as well as adding some normalizers and encoders.
 You can install the package via composer:
 
 ```bash
-composer require alexandregerault/laravel-sf-serializer
+composer require hexium-agency/symfony-serializer-for-laravel
 ```
 
 You can publish the config file with:

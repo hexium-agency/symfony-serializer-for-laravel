@@ -1,6 +1,6 @@
 <?php
 
-namespace HexiumAgency\LaravelSfSerializer\Configuration;
+namespace HexiumAgency\SymfonySerializerForLaravel\Configuration;
 
 use Symfony\Component\PropertyAccess\PropertyAccessor;
 use Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor;
@@ -39,7 +39,11 @@ final readonly class ConfigurationLoader
      */
     private static function arrayToConfiguration(array $config): Configuration
     {
-        return self::createSerializer()->denormalize(data: $config, type: Configuration::class, format: 'json');
+        $configuration = self::createSerializer()->denormalize(data: $config, type: Configuration::class, format: 'json');
+
+        \Webmozart\Assert\Assert::isInstanceOf($configuration, Configuration::class);
+
+        return $configuration;
     }
 
     private static function createSerializer(): DenormalizerInterface

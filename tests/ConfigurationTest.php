@@ -1,8 +1,8 @@
 <?php
 
-use HexiumAgency\LaravelSfSerializer\Configuration\Configuration;
-use HexiumAgency\LaravelSfSerializer\Configuration\ConfigurationInvalid;
-use HexiumAgency\LaravelSfSerializer\Configuration\ConfigurationLoader;
+use HexiumAgency\SymfonySerializerForLaravel\Configuration\Configuration;
+use HexiumAgency\SymfonySerializerForLaravel\Configuration\ConfigurationInvalid;
+use HexiumAgency\SymfonySerializerForLaravel\Configuration\ConfigurationLoader;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 describe('Validate configuration file', function () {
@@ -126,7 +126,7 @@ describe('Fetching sorted services', function () {
                 ],
             ],
         ];
-        config()->set('sf-serializer', $config);
+        config()->set('symfony-serializer', $config);
 
         $configuration = ConfigurationLoader::load($config);
 

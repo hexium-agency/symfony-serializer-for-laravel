@@ -1,5 +1,5 @@
 {
-    "name": "hexium-agency/laravel-sf-serializer",
+    "name": "hexium-agency/symfony-serializer-for-laravel",
     "description": "Laravel package for the symfony/serializer component",
     "keywords": [
         "hexium",
@@ -9,7 +9,7 @@
         "laravel",
         "laravel-sf-serializer"
     ],
-    "homepage": "https://github.com/alexandregerault/laravel-sf-serializer",
+    "homepage": "https://github.com/hexium-agency/laravel-sf-serializer",
     "license": "MIT",
     "authors": [
         {
@@ -43,13 +43,12 @@
     },
     "autoload": {
         "psr-4": {
-            "HexiumAgency\\LaravelSfSerializer\\": "src/",
-            "HexiumAgency\\LaravelSfSerializer\\Database\\Factories\\": "database/factories/"
+            "HexiumAgency\\SymfonySerializerForLaravel\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "HexiumAgency\\LaravelSfSerializer\\Tests\\": "tests/",
+            "HexiumAgency\\SymfonySerializerForLaravel\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
