@@ -2,7 +2,6 @@
 
 namespace HexiumAgency\LaravelSfSerializer;
 
-use HexiumAgency\LaravelSfSerializer\Commands\DebugSerializer;
 use HexiumAgency\LaravelSfSerializer\Configuration\ConfigurationLoader;
 use HexiumAgency\LaravelSfSerializer\ServiceProviders\LaravelSfPropertyAccessServiceProvider;
 use HexiumAgency\LaravelSfSerializer\ServiceProviders\LaravelSfPropertyInfoServiceProvider;

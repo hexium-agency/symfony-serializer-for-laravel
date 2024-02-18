@@ -8,6 +8,7 @@ describe('CommandTest', function () {
     });
 });
 
-class SomeDto {
+class SomeDto
+{
     private string $name;
 }

@@ -24,6 +24,7 @@ class Configuration
 
     /**
      * @return array<NormalizerInterface|DenormalizerInterface>
+     *
      * @throws BindingResolutionException
      */
     public function getSortedNormalizers(Application $application): array
@@ -41,6 +42,7 @@ class Configuration
 
     /**
      * @return array<EncoderInterface>
+     *
      * @throws BindingResolutionException
      */
     public function getSortedEncoders(Application $application): array

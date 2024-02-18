@@ -98,7 +98,6 @@ describe('Fetching sorted services', function () {
 
         $sorted = $configuration->getSortedNormalizers(app());
 
-
         expect($sorted)->toHaveCount(3)
             ->and($sorted[0])->toBeInstanceOf(FirstNormalizer::class)
             ->and($sorted[1])->toBeInstanceOf(SecondNormalizer::class)
@@ -140,91 +139,109 @@ describe('Fetching sorted services', function () {
     });
 });
 
-class FirstNormalizer implements NormalizerInterface {
+class FirstNormalizer implements NormalizerInterface
+{
     #[\Override]
     public function normalize(mixed $object, ?string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
         return [];
     }
 
-    #[\Override] public function supportsNormalization(mixed $data, ?string $format = null, array $context = []): bool
+    #[\Override]
+    public function supportsNormalization(mixed $data, ?string $format = null, array $context = []): bool
     {
         return true;
     }
 
-    #[\Override] public function getSupportedTypes(?string $format): array
+    #[\Override]
+    public function getSupportedTypes(?string $format): array
     {
         return [];
     }
 }
 
-class SecondNormalizer implements NormalizerInterface {
+class SecondNormalizer implements NormalizerInterface
+{
     #[\Override]
     public function normalize(mixed $object, ?string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
         return [];
     }
 
-    #[\Override] public function supportsNormalization(mixed $data, ?string $format = null, array $context = []): bool
+    #[\Override]
+    public function supportsNormalization(mixed $data, ?string $format = null, array $context = []): bool
     {
         return true;
     }
 
-    #[\Override] public function getSupportedTypes(?string $format): array
+    #[\Override]
+    public function getSupportedTypes(?string $format): array
     {
         return [];
     }
 }
 
-class ThirdNormalizer implements NormalizerInterface {
+class ThirdNormalizer implements NormalizerInterface
+{
     #[\Override]
     public function normalize(mixed $object, ?string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
         return [];
     }
 
-    #[\Override] public function supportsNormalization(mixed $data, ?string $format = null, array $context = []): bool
+    #[\Override]
+    public function supportsNormalization(mixed $data, ?string $format = null, array $context = []): bool
     {
         return true;
     }
 
-    #[\Override] public function getSupportedTypes(?string $format): array
+    #[\Override]
+    public function getSupportedTypes(?string $format): array
     {
         return [];
     }
 }
 
-class FirstEncoder implements \Symfony\Component\Serializer\Encoder\EncoderInterface {
-    #[\Override] public function encode(mixed $data, string $format, array $context = []): string
+class FirstEncoder implements \Symfony\Component\Serializer\Encoder\EncoderInterface
+{
+    #[\Override]
+    public function encode(mixed $data, string $format, array $context = []): string
     {
         return '';
     }
 
-    #[\Override] public function supportsEncoding(string $format): bool
+    #[\Override]
+    public function supportsEncoding(string $format): bool
     {
         return true;
     }
 }
 
-class SecondEncoder implements \Symfony\Component\Serializer\Encoder\EncoderInterface {
-    #[\Override] public function encode(mixed $data, string $format, array $context = []): string
+class SecondEncoder implements \Symfony\Component\Serializer\Encoder\EncoderInterface
+{
+    #[\Override]
+    public function encode(mixed $data, string $format, array $context = []): string
     {
         return '';
     }
 
-    #[\Override] public function supportsEncoding(string $format): bool
+    #[\Override]
+    public function supportsEncoding(string $format): bool
     {
         return true;
     }
 }
 
-class ThirdEncoder implements \Symfony\Component\Serializer\Encoder\EncoderInterface {
-    #[\Override] public function encode(mixed $data, string $format, array $context = []): string
+class ThirdEncoder implements \Symfony\Component\Serializer\Encoder\EncoderInterface
+{
+    #[\Override]
+    public function encode(mixed $data, string $format, array $context = []): string
     {
         return '';
     }
 
-    #[\Override] public function supportsEncoding(string $format): bool
+    #[\Override]
+    public function supportsEncoding(string $format): bool
     {
         return true;
     }
