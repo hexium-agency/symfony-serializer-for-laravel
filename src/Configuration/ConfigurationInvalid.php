@@ -2,7 +2,6 @@
 
 namespace HexiumAgency\SymfonySerializerForLaravel\Configuration;
 
-use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationInterface;
 use Symfony\Component\Validator\ConstraintViolationListInterface;
 
