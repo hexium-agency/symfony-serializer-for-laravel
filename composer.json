@@ -80,7 +80,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "HexiumAgency\\LaravelSfSerializer\\LaravelSfSerializerServiceProvider"
+                "HexiumAgency\\SymfonySerializerForLaravel\\SymfonySerializerForLaravelServiceProvider"
             ],
             "aliases": {
                 "LaravelSfSerializer": "Serializer"

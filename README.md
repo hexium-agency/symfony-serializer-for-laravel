@@ -5,7 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/alexandregerault/laravel-sf-serializer/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/alexandregerault/laravel-sf-serializer/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/alexandregerault/laravel-sf-serializer.svg?style=flat-square)](https://packagist.org/packages/alexandregerault/laravel-sf-serializer)
 
-The (symfony/serializer)[https://github.com/symfony/serializer] component is a great tool to serialize and deserialize objects. This package provides a bridge 
+The [symfony/serializer](https://github.com/symfony/serializer) component is a great tool to serialize and deserialize objects. This package provides a bridge 
 between Laravel and the symfony/serializer component. Then it should be very easy to use with DI in your application
 code, as well as adding some normalizers and encoders.
 
@@ -27,7 +27,7 @@ This is the contents of the published config file:
 
 ```php
 /**
- * @var array{
+ * @return array{
  *     normalizers: array<array{id: string, priority: int}>,
  *     encoders: array<array{id: string, priority: int}>,
  *     list_extractors: array<array{id: string, priority: int}>,

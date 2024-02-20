@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @var array{
+ * @return array{
  *     normalizers: array<array{id: string, priority: int}>,
  *     encoders: array<array{id: string, priority: int}>,
  *     list_extractors: array<array{id: string, priority: int}>,
