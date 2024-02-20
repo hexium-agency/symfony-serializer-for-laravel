@@ -26,14 +26,16 @@ php artisan vendor:publish --tag="symfony-serializer-for-laravel-config"
 This is the contents of the published config file:
 
 ```php
+<?php
+
 /**
  * @return array{
- *     normalizers: array<array{id: string, priority: int}>,
- *     encoders: array<array{id: string, priority: int}>,
- *     list_extractors: array<array{id: string, priority: int}>,
- *     type_extractors: array<array{id: string, priority: int}>,
- *     access_extractors: array<array{id: string, priority: int}>,
- *     initializable_extractors: array<array{id: string, priority: int}>,
+ *     normalizers: array<array{id: string, priority?: int}>,
+ *     encoders: array<array{id: string, priority?: int}>,
+ *     list_extractors: array<array{id: string, priority?: int}>,
+ *     type_extractors: array<array{id: string, priority?: int}>,
+ *     access_extractors: array<array{id: string, priority?: int}>,
+ *     initializable_extractors: array<array{id: string, priority?: int}>,
  *     defaultContext: array<string, mixed>
  * }
  */
@@ -71,10 +73,23 @@ return [
             'id' => 'serializer.denormalizer.array',
             'priority' => -990,
         ],
+        [
+            'id' => 'serializer.normalizer.backed_enum',
+            'priority' => -915,
+        ],
     ],
     'encoders' => [
         [
-            'id' => '',
+            'id' => 'serializer.encoder.xml',
+        ],
+        [
+            'id' => 'serializer.encoder.json',
+        ],
+        [
+            'id' => 'serializer.encoder.yaml',
+        ],
+        [
+            'id' => 'serializer.encoder.csv',
         ],
     ],
     'list_extractors' => [
@@ -102,11 +117,11 @@ return [
         ],
     ],
 ];
-
 ```
 
 ## Usage
 
+### Normal dependency injection
 ```php
 class SendDiscordNotification {
     private SerializerInterface $serializer;
@@ -142,6 +157,22 @@ class DiscordNotificationParser {
     }
 }
 ```
+
+### Using the facade
+```php
+use HexiumAgency\SymfonySerializerForLaravel\Facades\Serializer;
+
+class DiscordNotificationParser {
+    public function parse(string $data): DiscordNotification {
+        return Serializer::deserialize($data, DiscordNotification::class, 'json');
+    }
+}
+```
+
+## Add normalizers and encoders
+
+You can add normalizers and encoders to the serializer by adding them to the config file. The priority is used to sort
+the normalizers and encoders. The ids of the services must match some of your container.
 
 ## Testing
 

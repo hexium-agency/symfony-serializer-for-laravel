@@ -2,12 +2,12 @@
 
 /**
  * @return array{
- *     normalizers: array<array{id: string, priority: int}>,
- *     encoders: array<array{id: string, priority: int}>,
- *     list_extractors: array<array{id: string, priority: int}>,
- *     type_extractors: array<array{id: string, priority: int}>,
- *     access_extractors: array<array{id: string, priority: int}>,
- *     initializable_extractors: array<array{id: string, priority: int}>,
+ *     normalizers: array<array{id: string, priority?: int}>,
+ *     encoders: array<array{id: string, priority?: int}>,
+ *     list_extractors: array<array{id: string, priority?: int}>,
+ *     type_extractors: array<array{id: string, priority?: int}>,
+ *     access_extractors: array<array{id: string, priority?: int}>,
+ *     initializable_extractors: array<array{id: string, priority?: int}>,
  *     defaultContext: array<string, mixed>
  * }
  */
