@@ -216,6 +216,5 @@ class SymfonySerializerForLaravelServiceProvider extends PackageServiceProvider
             return new SerializerExtractor($application->make('serializer.mapping.class_metadata_factory'));
         });
         $this->app->tag('property_info.serializer_extractor', 'property_info.list_extractor');
-
     }
 }

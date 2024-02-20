@@ -21,11 +21,17 @@ describe('Validate configuration', function () {
                     'id' => 'json',
                     'priority' => 1,
                 ],
+                [
+                    'id' => 'xml',
+                ],
             ])
             ->withEncoders([
                 [
                     'id' => 'json',
                     'priority' => 1,
+                ],
+                [
+                    'id' => 'xml',
                 ],
             ])
             ->build();
@@ -33,12 +39,16 @@ describe('Validate configuration', function () {
         $configuration = ConfigurationLoader::loadValidated($config);
 
         expect($configuration)->toBeInstanceOf(Configuration::class)
-            ->and($configuration->normalizers())->toHaveCount(1)
+            ->and($configuration->normalizers())->toHaveCount(2)
             ->and($configuration->normalizers()[0]->id)->toBe('json')
             ->and($configuration->normalizers()[0]->priority)->toBe(1)
-            ->and($configuration->encoders())->toHaveCount(1)
+            ->and($configuration->normalizers()[1]->id)->toBe('xml')
+            ->and($configuration->normalizers()[1]->priority)->toBe(0)
+            ->and($configuration->encoders())->toHaveCount(2)
             ->and($configuration->encoders()[0]->id)->toBe('json')
-            ->and($configuration->encoders()[0]->priority)->toBe(1);
+            ->and($configuration->encoders()[0]->priority)->toBe(1)
+            ->and($configuration->encoders()[1]->id)->toBe('xml')
+            ->and($configuration->encoders()[1]->priority)->toBe(0);
     });
 
     it('does not accept a normalizer without id', function () {
@@ -70,80 +80,32 @@ describe('Validate configuration', function () {
     })
         ->with([
             [
-                'normalizers' => [
-                    [
-                        'id' => 'json',
-                        'priority' => 1,
-                    ],
-                ],
-                'encoders' => [
-                    [
-                        'id' => 'json',
-                        'priority' => 1,
-                    ],
-                ],
-                'list_extractors' => [
+                ConfigurationArrayBuilder::new()->withListExtractors([
                     [
                         'priority' => 1,
                     ],
-                ],
+                ])->build(),
             ],
             [
-                'normalizers' => [
-                    [
-                        'id' => 'json',
-                        'priority' => 1,
-                    ],
-                ],
-                'encoders' => [
-                    [
-                        'id' => 'json',
-                        'priority' => 1,
-                    ],
-                ],
-                'type_extractors' => [
+                ConfigurationArrayBuilder::new()->withTypeExtractors([
                     [
                         'priority' => 1,
                     ],
-                ],
+                ])->build(),
             ],
             [
-                'normalizers' => [
-                    [
-                        'id' => 'json',
-                        'priority' => 1,
-                    ],
-                ],
-                'encoders' => [
-                    [
-                        'id' => 'json',
-                        'priority' => 1,
-                    ],
-                ],
-                'access_extractors' => [
+                ConfigurationArrayBuilder::new()->withAccessExtractors([
                     [
                         'priority' => 1,
                     ],
-                ],
+                ])->build(),
             ],
             [
-                'normalizers' => [
-                    [
-                        'id' => 'json',
-                        'priority' => 1,
-                    ],
-                ],
-                'encoders' => [
-                    [
-                        'id' => 'json',
-                        'priority' => 1,
-                    ],
-                ],
-                'initializable_extractors' => [
+                ConfigurationArrayBuilder::new()->withInitializableExtractors([
                     [
                         'priority' => 1,
                     ],
-                ],
+                ])->build(),
             ],
         ])
         ->throws(ConfigurationInvalid::class);
@@ -157,23 +119,20 @@ describe('Sort services by priority', function () {
         $application->bind('second_normalizer', SecondNormalizer::class);
         $application->bind('third_normalizer', ThirdNormalizer::class);
 
-        $config = [
-            'normalizers' => [
-                [
-                    'id' => 'first_normalizer',
-                    'priority' => 1,
-                ],
-                [
-                    'id' => 'third_normalizer',
-                    'priority' => 3,
-                ],
-                [
-                    'id' => 'second_normalizer',
-                    'priority' => 2,
-                ],
+        $config = ConfigurationArrayBuilder::new()->withNormalizers([
+            [
+                'id' => 'first_normalizer',
+                'priority' => 1,
             ],
-            'encoders' => [],
-        ];
+            [
+                'id' => 'third_normalizer',
+                'priority' => 3,
+            ],
+            [
+                'id' => 'second_normalizer',
+                'priority' => 2,
+            ],
+        ])->build();
 
         $configuration = ConfigurationLoader::loadValidated($config);
 
@@ -192,23 +151,20 @@ describe('Sort services by priority', function () {
         $application->bind('second_encoder', SecondEncoder::class);
         $application->bind('third_encoder', ThirdEncoder::class);
 
-        $config = [
-            'normalizers' => [],
-            'encoders' => [
-                [
-                    'id' => 'first_encoder',
-                    'priority' => 1,
-                ],
-                [
-                    'id' => 'third_encoder',
-                    'priority' => 3,
-                ],
-                [
-                    'id' => 'second_encoder',
-                    'priority' => 2,
-                ],
+        $config = ConfigurationArrayBuilder::new()->withEncoders([
+            [
+                'id' => 'first_encoder',
+                'priority' => 1,
             ],
-        ];
+            [
+                'id' => 'third_encoder',
+                'priority' => 3,
+            ],
+            [
+                'id' => 'second_encoder',
+                'priority' => 2,
+            ],
+        ])->build();
 
         $configuration = ConfigurationLoader::loadValidated($config);
 

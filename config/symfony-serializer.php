@@ -45,10 +45,23 @@ return [
             'id' => 'serializer.denormalizer.array',
             'priority' => -990,
         ],
+        [
+            'id' => 'serializer.normalizer.backed_enum',
+            'priority' => -915,
+        ],
     ],
     'encoders' => [
         [
-            'id' => '',
+            'id' => 'serializer.encoder.xml',
+        ],
+        [
+            'id' => 'serializer.encoder.json',
+        ],
+        [
+            'id' => 'serializer.encoder.yaml',
+        ],
+        [
+            'id' => 'serializer.encoder.csv',
         ],
     ],
     'list_extractors' => [

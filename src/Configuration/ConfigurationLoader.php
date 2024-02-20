@@ -75,26 +75,30 @@ final readonly class ConfigurationLoader
     private static function configurationConstraints(): Assert\Collection
     {
         return new Assert\Collection([
-            'normalizers' => new Assert\All([
-                new Assert\Collection([
-                    'id' => new Assert\NotBlank(),
-                    'priority' => new Assert\Range(min: -2000, max: 2000),
+            'normalizers' => [
+                new Assert\All([
+                    new Assert\Collection([
+                        'id' => new Assert\NotBlank(),
+                        'priority' => new Assert\Optional(new Assert\Range(min: -2000, max: 2000)),
+                    ]),
                 ]),
                 new Assert\Count(min: 1),
-            ]),
-            'encoders' => new Assert\All([
-                new Assert\Collection([
-                    'id' => new Assert\NotBlank(),
-                    'priority' => new Assert\Range(min: -2000, max: 2000),
+            ],
+            'encoders' => [
+                new Assert\All([
+                    new Assert\Collection([
+                        'id' => new Assert\NotBlank(),
+                        'priority' => new Assert\Optional(new Assert\Range(min: -2000, max: 2000)),
+                    ]),
                 ]),
                 new Assert\Count(min: 1),
-            ]),
+            ],
             'list_extractors' => new Assert\Optional([
                 new Assert\Type('array'),
                 new Assert\All([
                     new Assert\Collection([
                         'id' => new Assert\NotBlank(),
-                        'priority' => new Assert\Range(min: -2000, max: 2000),
+                        'priority' => new Assert\Optional(new Assert\Range(min: -2000, max: 2000)),
                     ]),
                 ]),
             ]),
@@ -103,7 +107,7 @@ final readonly class ConfigurationLoader
                 new Assert\All([
                     new Assert\Collection([
                         'id' => new Assert\NotBlank(),
-                        'priority' => new Assert\Range(min: -2000, max: 2000),
+                        'priority' => new Assert\Optional(new Assert\Range(min: -2000, max: 2000)),
                     ]),
                 ]),
             ]),
@@ -112,7 +116,7 @@ final readonly class ConfigurationLoader
                 new Assert\All([
                     new Assert\Collection([
                         'id' => new Assert\NotBlank(),
-                        'priority' => new Assert\Range(min: -2000, max: 2000),
+                        'priority' => new Assert\Optional(new Assert\Range(min: -2000, max: 2000)),
                     ]),
                 ]),
             ]),
@@ -121,7 +125,7 @@ final readonly class ConfigurationLoader
                 new Assert\All([
                     new Assert\Collection([
                         'id' => new Assert\NotBlank(),
-                        'priority' => new Assert\Range(min: -2000, max: 2000),
+                        'priority' => new Assert\Optional(new Assert\Range(min: -2000, max: 2000)),
                     ]),
                 ]),
             ]),
