@@ -29,7 +29,11 @@ This is the contents of the published config file:
 /**
  * @var array{
  *     normalizers: array<array{id: string, priority: int}>,
- *     encoders: array<array{id: string}>,
+ *     encoders: array<array{id: string, priority: int}>,
+ *     list_extractors: array<array{id: string, priority: int}>,
+ *     type_extractors: array<array{id: string, priority: int}>,
+ *     access_extractors: array<array{id: string, priority: int}>,
+ *     initializable_extractors: array<array{id: string, priority: int}>,
  *     defaultContext: array<string, mixed>
  * }
  */
@@ -73,7 +77,32 @@ return [
             'id' => '',
         ],
     ],
+    'list_extractors' => [
+        [
+            'id' => 'property_info.reflection_extractor',
+            'priority' => -1000,
+        ],
+    ],
+    'type_extractors' => [
+        [
+            'id' => 'property_info.reflection_extractor',
+            'priority' => -1002,
+        ],
+    ],
+    'access_extractors' => [
+        [
+            'id' => 'property_info.reflection_extractor',
+            'priority' => -1000,
+        ],
+    ],
+    'initializable_extractors' => [
+        [
+            'id' => 'property_info.reflection_extractor',
+            'priority' => -1000,
+        ],
+    ],
 ];
+
 ```
 
 ## Usage
