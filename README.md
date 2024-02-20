@@ -1,9 +1,9 @@
 # Laravel package for the symfony/serializer component
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/alexandregerault/laravel-sf-serializer.svg?style=flat-square)](https://packagist.org/packages/alexandregerault/laravel-sf-serializer)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/alexandregerault/laravel-sf-serializer/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/alexandregerault/laravel-sf-serializer/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/alexandregerault/laravel-sf-serializer/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/alexandregerault/laravel-sf-serializer/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/alexandregerault/laravel-sf-serializer.svg?style=flat-square)](https://packagist.org/packages/alexandregerault/laravel-sf-serializer)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/hexium-agency/symfony-serializer-for-laravel.svg?style=flat-square)](https://packagist.org/packages/hexium-agency/symfony-serializer-for-laravel)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/hexium-agency/symfony-serializer-for-laravel/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/hexium-agency/symfony-serializer-for-laravel/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/hexium-agency/symfony-serializer-for-laravel/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/hexium-agency/symfony-serializer-for-laravel/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/hexium-agency/symfony-serializer-for-laravel.svg?style=flat-square)](https://packagist.org/packages/hexium-agency/symfony-serializer-for-laravel)
 
 The [symfony/serializer](https://github.com/symfony/serializer) component is a great tool to serialize and deserialize objects. This package provides a bridge 
 between Laravel and the symfony/serializer component. Then it should be very easy to use with DI in your application
