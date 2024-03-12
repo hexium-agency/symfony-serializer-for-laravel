@@ -23,6 +23,7 @@
         "illuminate/contracts": "^10.0",
         "phpdocumentor/reflection-docblock": "^5.3",
         "spatie/laravel-package-tools": "^1.14.0",
+        "symfony/cache": "^7.0",
         "symfony/property-access": "^7.0",
         "symfony/property-info": "^7.0",
         "symfony/serializer": "^7.0",
