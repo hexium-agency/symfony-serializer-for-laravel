@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-sf-serializer` will be documented in this file.
 
+## Fix the typeExtractor list - 2024-03-15
+
+**Full Changelog**: https://github.com/hexium-agency/symfony-serializer-for-laravel/compare/v0.0.2...v0.0.3
+
 ## v0.0.2 - 2024-03-12
 
 ### What's Changed
