@@ -72,8 +72,12 @@ return [
     ],
     'type_extractors' => [
         [
+            'id' => 'property_info.php_doc_extractor',
+            'priority' => -990,
+        ],
+        [
             'id' => 'property_info.reflection_extractor',
-            'priority' => -1002,
+            'priority' => -1000,
         ],
     ],
     'access_extractors' => [

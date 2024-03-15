@@ -122,11 +122,11 @@ describe('Sort services by priority', function () {
         $config = ConfigurationArrayBuilder::new()->withNormalizers([
             [
                 'id' => 'first_normalizer',
-                'priority' => 1,
+                'priority' => 3,
             ],
             [
                 'id' => 'third_normalizer',
-                'priority' => 3,
+                'priority' => 1,
             ],
             [
                 'id' => 'second_normalizer',
@@ -154,11 +154,11 @@ describe('Sort services by priority', function () {
         $config = ConfigurationArrayBuilder::new()->withEncoders([
             [
                 'id' => 'first_encoder',
-                'priority' => 1,
+                'priority' => 3,
             ],
             [
                 'id' => 'third_encoder',
-                'priority' => 3,
+                'priority' => 1,
             ],
             [
                 'id' => 'second_encoder',
@@ -187,11 +187,11 @@ describe('Sort services by priority', function () {
             ->withListExtractors([
                 [
                     'id' => 'first_extractor',
-                    'priority' => 1,
+                    'priority' => 3,
                 ],
                 [
                     'id' => 'third_extractor',
-                    'priority' => 3,
+                    'priority' => 1,
                 ],
                 [
                     'id' => 'second_extractor',
@@ -221,11 +221,11 @@ describe('Sort services by priority', function () {
             ->withTypeExtractors([
                 [
                     'id' => 'first_extractor',
-                    'priority' => 1,
+                    'priority' => 3,
                 ],
                 [
                     'id' => 'third_extractor',
-                    'priority' => 3,
+                    'priority' => 1,
                 ],
                 [
                     'id' => 'second_extractor',
@@ -255,11 +255,11 @@ describe('Sort services by priority', function () {
             ->withAccessExtractors([
                 [
                     'id' => 'first_extractor',
-                    'priority' => 1,
+                    'priority' => 3,
                 ],
                 [
                     'id' => 'third_extractor',
-                    'priority' => 3,
+                    'priority' => 1,
                 ],
                 [
                     'id' => 'second_extractor',
@@ -289,11 +289,11 @@ describe('Sort services by priority', function () {
             ->withInitializableExtractors([
                 [
                     'id' => 'first_extractor',
-                    'priority' => 1,
+                    'priority' => 3,
                 ],
                 [
                     'id' => 'third_extractor',
-                    'priority' => 3,
+                    'priority' => 1,
                 ],
                 [
                     'id' => 'second_extractor',

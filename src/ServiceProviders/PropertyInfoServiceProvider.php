@@ -33,7 +33,13 @@ class PropertyInfoServiceProvider extends ServiceProvider
             $accessExtractors = $configuration->getSortedAccessExtractors($application);
             $initializableExtractors = $configuration->getSortedInitializableExtractors($application);
 
-            return new PropertyInfoExtractor($listExtractors, $typeExtractors, $descriptionExtractors, $accessExtractors, $initializableExtractors);
+            return new PropertyInfoExtractor(
+                listExtractors: $listExtractors,
+                typeExtractors: $typeExtractors,
+                descriptionExtractors: $descriptionExtractors,
+                accessExtractors: $accessExtractors,
+                initializableExtractors: $initializableExtractors
+            );
         });
 
         $this->app->alias(abstract: 'property_info', alias: PropertyAccessExtractorInterface::class);

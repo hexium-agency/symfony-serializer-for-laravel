@@ -43,7 +43,7 @@ readonly class Configuration
         $sorted = $this->normalizers;
 
         usort($sorted, static function (Normalizer $a, Normalizer $b) {
-            return $a->priority <=> $b->priority;
+            return $b->priority <=> $a->priority;
         });
 
         return array_map(static function (Normalizer $normalizer) use ($application) {
@@ -61,7 +61,7 @@ readonly class Configuration
         $sorted = $this->encoders;
 
         usort($sorted, static function (Encoder $a, Encoder $b) {
-            return $a->priority <=> $b->priority;
+            return $b->priority <=> $a->priority;
         });
 
         return array_map(static function (Encoder $encoder) use ($application) {
@@ -79,7 +79,7 @@ readonly class Configuration
         $sorted = $this->listExtractors;
 
         usort($sorted, static function (PropertyInfoExtractor $a, PropertyInfoExtractor $b) {
-            return $a->priority <=> $b->priority;
+            return $b->priority <=> $a->priority;
         });
 
         return array_map(static function (PropertyInfoExtractor $extractor) use ($application) {
@@ -97,7 +97,7 @@ readonly class Configuration
         $sorted = $this->typeExtractors;
 
         usort($sorted, static function (PropertyInfoExtractor $a, PropertyInfoExtractor $b) {
-            return $a->priority <=> $b->priority;
+            return $b->priority <=> $a->priority;
         });
 
         return array_map(static function (PropertyInfoExtractor $extractor) use ($application) {
@@ -115,7 +115,7 @@ readonly class Configuration
         $sorted = $this->accessExtractors;
 
         usort($sorted, static function (PropertyInfoExtractor $a, PropertyInfoExtractor $b) {
-            return $a->priority <=> $b->priority;
+            return $b->priority <=> $a->priority;
         });
 
         return array_map(static function (PropertyInfoExtractor $extractor) use ($application) {
@@ -133,7 +133,7 @@ readonly class Configuration
         $sorted = $this->initializableExtractors;
 
         usort($sorted, static function (PropertyInfoExtractor $a, PropertyInfoExtractor $b) {
-            return $a->priority <=> $b->priority;
+            return $b->priority <=> $a->priority;
         });
 
         return array_map(static function (PropertyInfoExtractor $extractor) use ($application) {
