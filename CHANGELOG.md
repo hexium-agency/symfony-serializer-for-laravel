@@ -2,6 +2,19 @@
 
 All notable changes to `laravel-sf-serializer` will be documented in this file.
 
+## v0.0.5 - 2024-04-20
+
+### What's Changed
+
+* Add Laravel 11 compatibility by @AlexandreGerault in https://github.com/hexium-agency/symfony-serializer-for-laravel/pull/5
+* chore(deps): bump dependabot/fetch-metadata from 1.6.0 to 2.0.0 by @dependabot in https://github.com/hexium-agency/symfony-serializer-for-laravel/pull/2
+
+### New Contributors
+
+* @AlexandreGerault made their first contribution in https://github.com/hexium-agency/symfony-serializer-for-laravel/pull/5
+
+**Full Changelog**: https://github.com/hexium-agency/symfony-serializer-for-laravel/compare/v0.0.4...v0.0.5
+
 ## v0.0.4 - 2024-04-20
 
 Bump Laravel compatibility to add support for Laravel 11
