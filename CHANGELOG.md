@@ -2,6 +2,16 @@
 
 All notable changes to `laravel-sf-serializer` will be documented in this file.
 
+## v0.0.4 - 2024-04-20
+
+Bump Laravel compatibility to add support for Laravel 11
+
+### What's Changed
+
+* chore(deps): bump aglipanci/laravel-pint-action from 2.3.1 to 2.4 by @dependabot in https://github.com/hexium-agency/symfony-serializer-for-laravel/pull/3
+
+**Full Changelog**: https://github.com/hexium-agency/symfony-serializer-for-laravel/compare/v0.0.3...v0.0.4
+
 ## Fix the typeExtractor list - 2024-03-15
 
 **Full Changelog**: https://github.com/hexium-agency/symfony-serializer-for-laravel/compare/v0.0.2...v0.0.3
