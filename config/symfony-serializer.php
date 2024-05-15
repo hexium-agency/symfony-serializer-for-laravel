@@ -77,7 +77,7 @@ return [
         ],
         [
             'id' => 'property_info.reflection_extractor',
-            'priority' => -1000,
+            'priority' => -1002,
         ],
     ],
     'access_extractors' => [
