@@ -2,6 +2,15 @@
 
 All notable changes to `laravel-sf-serializer` will be documented in this file.
 
+## v0.0.6 - Add AttributeLoader - 2024-05-15
+
+### What's Changed
+
+* fix: add missing attribute loader (originally set by the framework extension in the Symfony world)
+* chore(deps): bump dependabot/fetch-metadata from 2.0.0 to 2.1.0 by @dependabot in https://github.com/hexium-agency/symfony-serializer-for-laravel/pull/6
+
+**Full Changelog**: https://github.com/hexium-agency/symfony-serializer-for-laravel/compare/v0.0.5...v0.0.6
+
 ## v0.0.5 - 2024-04-20
 
 ### What's Changed
