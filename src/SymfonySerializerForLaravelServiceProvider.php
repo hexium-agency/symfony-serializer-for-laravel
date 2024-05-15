@@ -169,7 +169,9 @@ class SymfonySerializerForLaravelServiceProvider extends PackageServiceProvider
 
         // Loader
         $this->app->bind('serializer.mapping.chain_loader', static function () {
-            return new LoaderChain([]);
+            return new LoaderChain([
+                new \Symfony\Component\Serializer\Mapping\Loader\AttributeLoader(),
+            ]);
         });
 
         // Class Metadata Factory
