@@ -69,6 +69,10 @@ return [
             'id' => 'property_info.reflection_extractor',
             'priority' => -1000,
         ],
+        [
+            'id' => 'property_info.serializer_extractor',
+            'priority' => -999,
+        ],
     ],
     'type_extractors' => [
         [
