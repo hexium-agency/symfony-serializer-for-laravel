@@ -2,6 +2,8 @@
 
 namespace Workbench\App\Geocoding\Api\DataTransferObject;
 
+use Symfony\Component\Serializer\Attribute\SerializedPath;
+
 readonly class FeatureCollection
 {
     /**
@@ -15,6 +17,8 @@ readonly class FeatureCollection
         public string $licence,
         public string $query,
         public int $limit,
+        #[SerializedPath('[filter][type]')]
+        public string $filterType,
     ) {
     }
 }
