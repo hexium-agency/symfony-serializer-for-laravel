@@ -17,7 +17,7 @@ readonly class FeatureCollection
         public string $licence,
         public string $query,
         public int $limit,
-        #[SerializedPath('[filter][type]')]
+        #[SerializedPath('[filters][type]')]
         public string $filterType,
     ) {
     }
