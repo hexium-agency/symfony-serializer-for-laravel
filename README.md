@@ -97,8 +97,16 @@ return [
             'id' => 'property_info.reflection_extractor',
             'priority' => -1000,
         ],
+        [
+            'id' => 'property_info.serializer_extractor',
+            'priority' => -999,
+        ],
     ],
     'type_extractors' => [
+        [
+            'id' => 'property_info.php_doc_extractor',
+            'priority' => -990,
+        ],
         [
             'id' => 'property_info.reflection_extractor',
             'priority' => -1002,
